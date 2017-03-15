@@ -25,20 +25,13 @@
                 return "segment_" + this.position;
             },
             angle: function () {
-                // Vom Winkel noch 180 abziehen um einen Winkel <= 180
-                // zu erhalten, der dann in Zusammenspiel mit dem Wert
-                // für largeArcFlag (s.u.: Wert < 50% === Winkel <180Grad)
-                // gemalt wird.
-                // Credits got to: https://codepen.io/fredrikln/pen/WvZYMg
-                return this.toRadians((this.value / 100) * 360 - 180);
+                return this.toRadians((this.value / 100) * 360);
             },
             path: function () {
-                var centerx = this.width / 2,
-                    centery = this.height / 2,
-                    startx = Math.round(this.centerx),
+                var startx = Math.round(this.centerx),
                     starty = Math.round(this.centery - this.radius),
-                    endx = Math.round(this.centerx - this.radius * Math.sin(this.angle)),
-                    endy = Math.round(this.centery + this.radius * Math.cos(this.angle)),
+                    endx = Math.round(this.centerx + this.radius * Math.sin(this.angle)),
+                    endy = Math.round(this.centery - this.radius * Math.cos(this.angle)),
                     largeArcFlag = this.value < 50 ? "0" : "1" // 0 if the arc is less than 180 degrees else 1
                     ;
                 return "M" + startx + ',' + starty
@@ -48,7 +41,7 @@
                     + " 1" // sweepFlag 1 == draw in positive angle direction
                     + " " + endx + "," + endy;
                 return path;
-            }
+            },
         },
         methods: {
             segmentselected: function () {
@@ -79,6 +72,16 @@
 
     .vtc-donutarc.segment_1 {
         stroke: #ff4805;
+    }
+
+    .vtc-donutarc.segment_2 {
+        stroke: #ff25de;
+    }
+    .vtc-donutarc.segment_3 {
+        stroke: #c8ff21;
+    }
+    .vtc-donutarc.segment_4 {
+        stroke: #62cfff;
     }
 
     .vtc-donutarc.active {
