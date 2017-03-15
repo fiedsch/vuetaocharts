@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Vuetao Charts</title>
+    <link href="assets/vuetaocharts.css" rel="stylesheet">
+</head>
+<body>
+<div id="app">
+    <vtc-donut
+            :chartdata="chartdata"
+            :width="chartwidth"
+            :height="chartheight"
+            :chartrotation="chartrotation"
+            @showinfo="showinfo"></vtc-donut>
+    <div class="explanation">
+        {{ explanation }}
+    </div>
+</div>
+
+<script src="assets/vue.2.1.6.js"></script>
+<script src="assets/vuetaocharts.js"></script>
+<script>
+    app = new Vue({
+        el: '#app',
+        computed: {
+            explanation: function () {
+                if (this.chartdata.length<1) { return '' }
+                if (this.selected < 0 || this.selected > this.chartdata.length) {
+                    return '';
+                }
+                return this.chartdata[this.selected].value
+                    + " Prozent der Befragten sagen: "
+                    + this.chartdata[this.selected].label;
+            }
+        },
+        data: {
+            selected: 0,
+            chartdata: [],
+            chartwidth: 230,
+            chartheight: 230,
+            chartrotation: 0, // keine Rotation, Start des ersten
+            // Segments eines Donuts bei 12 Uhr.
+            //
+            // Wir wollen *bei zwei Segmenten* aber eine Ausrichtung
+            // "rechts/links", gehen also um 90 Grad und die Hälfte
+            // der Größe des ersten Segments (in Grad!) gegen den
+            // Uhrzeigersinn zurück (negative Winkel).
+            //chartrotation: -90 - ( (72.5 / 100) * 360 / 2),
+            // evtl noch -180 um die "Orientierung" genau spiegelverkehrt
+            // zu gestalten.
+        },
+        methods: {
+            showinfo: function (position) {
+                this.selected = position;
+            },
+            setChartData: function (data) {
+                this.chartdata = data;
+            }
+        }
+    });
+
+    app.setChartData(
+        [
+        {label: "Sehr gut", value: 22.5},
+        {label: "Gut", value: 31.2},
+        {label: "Mittel", value: 24.3},
+        {label: "Schlecht", value: 13.0},
+        {label: "Voll daneben", value: 9.0}
+        ]
+    );
+
+    //app.setChartData([{label: "Ja", value: 72.3},{label: "Nein", value: 27.7}]);
+
+</script>
+</body>
+</html>

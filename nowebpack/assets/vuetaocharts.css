@@ -1,0 +1,57 @@
+.vtc-donutarc {
+    stroke-width: 40;
+    stroke-opacity: 0.75;
+    fill: none;
+    stroke: #82E0AA; /* fallback */
+}
+
+.vtc-donutarc.segment_0 {
+    stroke: #239B56;
+}
+
+.vtc-donutarc.segment_1 {
+    stroke: #ff4805;
+}
+
+.vtc-donutarc.segment_2 {
+    stroke: #ff25de;
+}
+.vtc-donutarc.segment_3 {
+    stroke: #c8ff21;
+}
+.vtc-donutarc.segment_4 {
+    stroke: #62cfff;
+}
+
+.vtc-donutarc.active {
+    stroke-opacity: 1.0;
+}
+
+
+.vtcdonut {
+    background-color: #eee;
+}
+
+.displaytext {
+    font-size: 38px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.displaylabel {
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: normal;
+}
+
+.chart {
+    width: 250px;
+    display: inline-block;
+}
+
+.explanation {
+    display: inline-block;
+    width: 100px;
+    font-family: sans-serif;
+    font-size: 12px;
+}
