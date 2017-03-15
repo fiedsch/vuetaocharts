@@ -44,7 +44,7 @@ To be done: create Contao Content Elements that use the Vue Components.
 
 Once this is done: you can install the Contao Extension via composer as usual.
 
-TODOs
+### TODOs
 
 * separate the library code (i.e. vue.js) from the bundled code created by webpack.
   vue.js then has to be included in the Contao page layout (Idea: or by checking an 
@@ -56,4 +56,11 @@ TODOs
   will have the required code for vue in its template.
 * create the `.js` files for the Vue components. Apart from the possibility to manually 
   write these find a way to use the single file components we already have.
+  
+### Ideas
+  
+  * use `<circle>` with `stroke-dashoffset` and/or `stroke-dasharray` as an alternative 
+  to `<path ...A...>` (See e.g. https://codepen.io/JMChristensen/pen/Ablch and 
+  https://css-tricks.com/almanac/properties/s/stroke-dashoffset/)
+   
   
