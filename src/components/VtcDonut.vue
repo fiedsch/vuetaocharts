@@ -19,13 +19,10 @@
 </template>
 
 <script>
-    import VtcDonutArc from "./VtcDonutArc"
-
-    export default {
+    import Vue from 'vue';
+    export default Vue.component('vtc-donut',
+    {
         props: ['data', 'width', 'height', 'chartrotation'],
-        components: {
-            'vtc-donutarc': VtcDonutArc,
-        },
         data: function () {
             return {
                 displayValue: this.formatValue(this.data[0].value),
@@ -58,6 +55,7 @@
             }
         }
     }
+    )
 </script>
 
 <style>

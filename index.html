@@ -5,7 +5,25 @@
     <title>Vuetao Charts</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+
+      <div class="demo">
+        <h1>{{ msg }}</h1>
+        <h2>Donut</h2>
+        <div class="chart">
+          <vtc-donut
+                  :data="data"
+                  :width="chartwidth"
+                  :height="chartheight"
+                  :chartrotation="chartrotation"
+                  @showinfo="showinfo"/>
+        </div>
+        <div class="explanation">
+          {{ explanation }}
+        </div>
+      </div>
+
+    </div>
     <!-- built files will be auto injected -->
   </body>
 </html>

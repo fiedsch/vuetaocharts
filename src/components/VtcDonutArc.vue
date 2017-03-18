@@ -10,11 +10,13 @@
 </template>
 
 <script>
-    export default {
+    import Vue from 'vue';
+    export default Vue.component('vtc-donutarc',
+    {
         props: ['centerx', 'centery', 'chartrotation', 'radius', 'value', 'sum', 'position'],
         data: function () {
             return {
-                isActive: false // (this.position == 0),
+                isActive: false
             }
         },
         computed: {
@@ -56,6 +58,7 @@
             }
         }
     }
+    )
 </script>
 
 <style>

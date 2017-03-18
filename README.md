@@ -21,6 +21,7 @@ Dynamic charts with Vue.js
 * change into newly created directory `cd vuetaocharts`
 * put `*.vue` files into `src/components`
 * use `index.html` instead of the newly created one
+* use `main.js`  instead of the newly created one
 * install dependencies with `npm install`
 * serve with hot reload at `localhost:8080` with `npm run dev`
 
@@ -54,8 +55,12 @@ Once this is done: you can install the Contao Extension via composer as usual.
 * create a Contao content element that allows the user to enter the data for the chart.
   MultiColumnWizard or as plain JSON Code with `fiedsch/contao-components`. The component
   will have the required code for vue in its template.
-* create the `.js` files for the Vue components. Apart from the possibility to manually 
-  write these find a way to use the single file components we already have.
+* <del>create the `.js` files for the Vue components. Apart from the possibility to manually 
+  write these find a way to use the single file components we already have.</del>
+  bundle the `js` files located in `build/js` ()created by `npm run build`) into one 
+  `js` file that will be included in a Contao page layout (e.g. `j_vutaocharts.html5`)
+  and integrate the required parts from of `index.html` and `main.js`into the new Contao
+   component's template.
   
 ### Ideas
   
