@@ -10,7 +10,7 @@
 </template>
 
 <script>
-    import Vue from 'vue';
+    import Vue from 'vue'; // do not import in "production bundle within Contao content element
     export default Vue.component('vtc-donutarc',
     {
         props: ['centerx', 'centery', 'chartrotation', 'radius', 'value', 'sum', 'position'],

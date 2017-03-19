@@ -19,7 +19,7 @@
 </template>
 
 <script>
-    import Vue from 'vue';
+    import Vue from 'vue'; // do not import in "production bundle within Contao content element
     export default Vue.component('vtc-donut',
     {
         props: ['data', 'width', 'height', 'chartrotation'],
