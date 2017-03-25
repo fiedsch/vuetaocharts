@@ -41,9 +41,8 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 ## Part two (Contao)
 
-To be done: create Contao Content Elements that use the Vue Components.
-
-Once this is done: you can install the Contao Extension via composer as usual.
+To be done: <del>create Contao Content Elements that use the Vue Components.</del> 
+Make that a packegae you can install the Contao Extension via composer as usual.
 
 
 ### TODOs
