@@ -1,4 +1,4 @@
-// start: do not include for "production bundle within Contao content element
+// start: do not include for "production bundle within Contao content element"
 // as we do not want to bundle with vtc-donut which is just one of many
 // possible components
 import Vue from 'vue';
@@ -7,8 +7,9 @@ Vue.config.productionTip = false;
 import './components/VtcDonut.vue';
 import './components/VtcDonutArc.vue';
 
-// start: put into index.html for "production bundle within Contao content element
+// start: put into index.html for "production bundle within Contao content element"
 /* eslint-disable no-new */
+
 new Vue({
     el: '#app',
     computed: {
@@ -51,5 +52,4 @@ new Vue({
         }
     }
 });
-// end: put into index.html for "production bundle within Contao content element
-
+// end: put into index.html for "production bundle within Contao content element"
