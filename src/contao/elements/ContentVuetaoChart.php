@@ -47,6 +47,11 @@ class ContentVuetaoChart extends \ContentElement
 	 */
 	protected function compile()
 	{
+
+        $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/vuetaocharts/assets/vue.js|static';
+        $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/vuetaocharts/assets/vuetaocharts.js|static';
+        $GLOBALS['TL_CSS'][] = 'system/modules/vuetaocharts/assets/vuetaocharts.css|static';
+
         // Use the ID of the content element to create a unique ID for the Vue app
         $this->Template->appid = $this->id;
 

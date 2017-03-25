@@ -40,7 +40,10 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['template'] = [
     'inputType' => 'select',
     'eval'      => ['mandatory' => true, 'tl_class' => 'w50'],
     // TODO 'options_callback' der allet Templates liefert, die mit ce_vtc beginnen.
-    'options'   => ['ce_vtcdonut','ce_vtcbars'],
+    'options_callback' => function() {
+        return Backend::getTemplateGroup('ce_vtc');
+    },
+    // 'options'   => ['ce_vtcdonut','ce_vtcbars'],
     'sql'       => "varchar(64) NOT NULL default ''",
 ];
 
