@@ -13,6 +13,8 @@
                 :chartrotation="chartrotation"
                 @showinfo="showinfo"
             ></vtc-donut>
+            <!-- ein zusätzlicher "Hinweistext" -->
+            <div class="explanation" v-text="explanation"></div>
         </div>
     </div>
 
@@ -20,20 +22,28 @@
         var data_from_contao = <?= $this->data; ?>;
         new Vue({
             el: '#app<?= $this->appid ?>',
+            /* "Berechnen" der Daten für den Hinweistext */
+            computed: {
+                explanation: function () {
+                    return this.chartdata[this.selected].value
+                        + " Prozent der Befragten sagen: "
+                        + this.chartdata[this.selected].label;
+                }
+            },
             data: function () {
                 return {
                     selected: 0,
                     chartdata: data_from_contao.chart_data,
                     chartwidth: <?= $this->svgwidth ?>,
                     chartheight: <?= $this->svgheight ?>,
-                    //chartrotation: 0, // keine Rotation, Start des ersten
+                    chartrotation: 0, // keine Rotation, Start des ersten
                     // Segments eines Donuts bei 12 Uhr.
                     //
                     // Wir wollen *bei zwei Segmenten* aber eine Ausrichtung
                     // "rechts/links", gehen also um 90 Grad und die Hälfte
                     // der Größe des ersten Segments (in Grad!) gegen den
                     // Uhrzeigersinn zurück (negative Winkel).
-                    chartrotation: -90 - ( (data_from_contao.chart_data[0].value / 100) * 360 / 2),
+                    //chartrotation: -90 - ( (data_from_contao.chart_data[0].value / 100) * 360 / 2),
                     // evtl noch -180 um die "Orientierung" genau spiegelverkehrt
                     // zu gestalten.
                 }
