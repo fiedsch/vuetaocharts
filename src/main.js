@@ -4,10 +4,13 @@
 import Vue from 'vue';
 Vue.config.productionTip = false;
 // stop: do not include ...
+
 import './components/VtcDonut.vue';
 import './components/VtcDonutArc.vue';
 
-// start: put into index.html for "production bundle within Contao content element"
+// also (TODO) comment out "import Vue from 'vue';" in VtcDonut.vue and VtcDonutArc.vue
+//
+// start: comment out for "production bundle within Contao content element"
 /* eslint-disable no-new */
 
 new Vue({
