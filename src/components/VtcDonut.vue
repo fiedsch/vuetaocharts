@@ -10,7 +10,7 @@
                     :centerx="width/2"
                     :centery="height/2"
                     :chartrotation="chartrotation"
-                    @segmentselected="showinfo"/>
+                    @segmentselected="showinfo"></vtc-donutarc>
             <text text-anchor="middle" alignment-baseline="central">
                 <tspan class="displaytext" :x="width/2" :y="height/2" dy="+8">{{ displayValue }}</tspan>
                 <tspan class="displaylabel" :x="width/2" :y="height/2" dy="+32">{{ displayLabel }}</tspan>

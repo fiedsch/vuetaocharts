@@ -6,6 +6,7 @@
 
     <div id="app<?= $this->appid ?>">
         <div class="chart">
+            <h2 v-text="question"></h2>
             <vtc-donut
                 :data="chartdata"
                 :width="chartwidth"
@@ -46,6 +47,9 @@
                     //chartrotation: -90 - ( (data_from_contao.chart_data[0].value / 100) * 360 / 2),
                     // evtl noch -180 um die "Orientierung" genau spiegelverkehrt
                     // zu gestalten.
+                    // Bsp.: für zusätzlichen Daten
+                    // Erwartet, daß in den Daten question: "...", enthalten ist.
+                    question: data_from_contao.question ? data_from_contao.question : ""
                 }
             },
             methods: {
