@@ -52,9 +52,6 @@ See https://github.com/fiedsch/vuetaocharts-ce
    we have more such elements on a page and only one of them includes vue.js. 
    If this element gets deactivated it breaks the other elements).
    
-* <del>create a Contao content element that allows the user to enter the data for the chart.
-  MultiColumnWizard or as plain JSON Code with `fiedsch/contao-components`. The component
-  will have the required code for vue in its template.</del> See `src/contao`.
 * <del>create the `.js` files for the Vue components. Apart from the possibility to manually 
   write these find a way to use the single file components we already have.</del>
   bundle the `js` files located in `build/js` ()created by `npm run build`) into one 
