@@ -46,11 +46,11 @@ See https://github.com/fiedsch/vuetaocharts-ce
 
 ### TODOs
 
-* separate the library code (i.e. vue.js) from the bundled code created by webpack.
+* <del>separate the library code (i.e. vue.js) from the bundled code created by webpack.
   vue.js then has to be included in the Contao page layout (Idea: or by checking an 
   option in the content element. Maybe not so good. Consider the following situation: 
    we have more such elements on a page and only one of them includes vue.js. 
-   If this element gets deactivated it breaks the other elements).
+   If this element gets deactivated it breaks the other elements).</del>
    
 * <del>create the `.js` files for the Vue components. Apart from the possibility to manually 
   write these find a way to use the single file components we already have.</del>
