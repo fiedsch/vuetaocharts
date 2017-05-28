@@ -1,12 +1,6 @@
 .DS_Store
-
-build/
-config/
-dist/
 node_modules/
-static/
-.babelrc
-.editorconfig
-.postcssrc.js
+dist/
+*.log
+package-lock.json
 package.json
-
