@@ -50,10 +50,10 @@ See https://github.com/fiedsch/vuetaocharts-ce
 
 * <del>create the `.js` files for the Vue components. Apart from the possibility to manually
   write these find a way to use the single file components we already have.</del>
-  bundle the `js` files located in `build/js` ()created by `npm run build`) into one
+  bundle the `js` file(s) located in `dist/js` (created by `npm run build`) into one
   `js` file that will be included in a Contao page layout (e.g. `j_vutaocharts.html5`)
   and integrate the required parts from of `index.html` and `main.js`into the new Contao
-   component's template.
+  component's template.
 
 
 ### Ideas
