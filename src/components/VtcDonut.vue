@@ -1,7 +1,7 @@
 <template>
     <svg class="vtcdonut" :width="width" :height="height" :viewbox="viewbox">
         <vtc-donutarc
-                v-for="(d,index) in data"
+                v-for="(d,index) in chartdata"
                 :key="d.code"
                 :position="index"
                 :value="d.value"
@@ -22,11 +22,11 @@
     import Vue from 'vue'
     export default Vue.component('vtc-donut',
         {
-            props: ['data', 'width', 'height', 'chartrotation'],
+            props: ['chartdata', 'width', 'height', 'chartrotation'],
             data: function () {
                 return {
-                    displayValue: this.formatValue(this.data[0].value),
-                    displayLabel: this.data[0].label
+                    displayValue: this.formatValue(this.chartdata[0].value),
+                    displayLabel: this.chartdata[0].label
                 }
             },
             computed: {
@@ -38,13 +38,13 @@
                 sum: function (index) {
                     var result = 0;
                     for (var i = 0; i < index; i++) {
-                        result += this.data[i].value
+                        result += this.chartdata[i].value
                     }
                     return result
                 },
                 showinfo: function (position) {
-                    this.displayValue = this.formatValue(this.data[position].value)
-                    this.displayLabel = this.data[position].label
+                    this.displayValue = this.formatValue(this.chartdata[position].value)
+                    this.displayLabel = this.chartdata[position].label
                     //console.log(JSON.stringify(position))
                     this.$emit('showinfo', position) // report to parent
                 },
